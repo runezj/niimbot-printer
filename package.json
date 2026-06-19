@@ -1,0 +1,63 @@
+{
+  "name": "niimbot-printer",
+  "version": "0.1.1",
+  "description": "Niimbot label-printer protocol + QR/text label rendering (transport-agnostic), with a React Native BLE adapter. Tested on the Niimbot B1.",
+  "license": "MIT",
+  "author": "Rune Jensen",
+  "keywords": [
+    "niimbot",
+    "b1",
+    "label",
+    "printer",
+    "thermal",
+    "bluetooth",
+    "ble",
+    "react-native",
+    "qr"
+  ],
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react-native": {
+      "types": "./dist/react-native/index.d.ts",
+      "default": "./dist/react-native/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "peerDependencies": {
+    "react-native": "*",
+    "react-native-ble-plx": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    },
+    "react-native-ble-plx": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/qrcode": "^1.5.5",
+    "react-native": "*",
+    "react-native-ble-plx": ">=3",
+    "typescript": "^5.4.0"
+  }
+}
